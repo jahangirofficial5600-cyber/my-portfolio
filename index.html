@@ -2,321 +2,403 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Digital marketing services including Meta Ads, Google Ads, TikTok Ads and YouTube SEO.">
-  <title>Digital Marketer | Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Digital Marketing Portfolio">
+<title>My Portfolio | Digital Marketer</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+<style>
+:root {
+  --bg: #080b13;
+  --panel: #101521;
+  --text: #f5f7fb;
+  --muted: #9ba5b7;
+  --orange: #ff7417;
+  --blue: #17a9e8;
+  --border: #252c3b;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+}
+a { color: inherit; text-decoration: none; }
+.container { width: 88%; max-width: 1120px; margin: auto; }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #0b1020;
-      color: #f8fafc;
-      line-height: 1.7;
-    }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(8,11,19,.95);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+nav {
+  min-height: 72px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+.logo { font-size: 21px; font-weight: 800; white-space: nowrap; }
+.logo span { color: var(--orange); }
+.navlinks { display: flex; gap: 21px; flex-wrap: wrap; }
+.navlinks a { color: var(--muted); font-size: 13px; }
+.navlinks a:hover { color: var(--orange); }
 
-    .container {
-      width: 88%;
-      max-width: 1100px;
-      margin: auto;
-    }
+.hero {
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  padding: 75px 0;
+  background: radial-gradient(ellipse at 80% 40%, #172138 0%, var(--bg) 60%);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 45px;
+  align-items: center;
+}
+.tag {
+  display: inline-block;
+  border: 1px solid #61391f;
+  color: #ff9a50;
+  border-radius: 30px;
+  padding: 4px 12px;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+h1 {
+  font-size: clamp(39px, 6vw, 66px);
+  line-height: 1.08;
+  letter-spacing: -2px;
+  margin: 22px 0;
+}
+.gradient {
+  background: linear-gradient(90deg, var(--orange), var(--blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+p { color: var(--muted); }
+.hero p { max-width: 550px; margin-bottom: 24px; }
+.btn {
+  display: inline-block;
+  background: var(--orange);
+  color: white;
+  padding: 11px 19px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 13px;
+  margin: 4px 7px 4px 0;
+  border: 1px solid var(--orange);
+  cursor: pointer;
+}
+.btn:hover { filter: brightness(1.12); }
+.btn-outline { background: transparent; border-color: var(--border); }
 
-    header {
-      border-bottom: 1px solid #253047;
-      background: #0b1020;
-      padding: 18px 0;
-    }
+.photo {
+  width: min(100%, 300px);
+  aspect-ratio: 4 / 5;
+  margin: auto;
+  border: 1px solid #3a4255;
+  border-radius: 24px;
+  background: linear-gradient(145deg, #19253a, #101521);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: 0 20px 70px #0006;
+}
+.photo img { width: 100%; height: 100%; object-fit: cover; }
+.photo-placeholder { color: #9ba5b7; text-align: center; padding: 20px; }
+.photo-placeholder strong {
+  display: block; color: var(--orange);
+  font-size: 48px; margin-bottom: 10px;
+}
 
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .logo {
-      color: #60a5fa;
-      font-size: 21px;
-      font-weight: bold;
-    }
-
-    nav a {
-      color: #e2e8f0;
-      text-decoration: none;
-      margin-left: 15px;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #60a5fa;
-    }
-
-    .hero {
-      padding: 100px 0 85px;
-      background: radial-gradient(ellipse at top right, #172c55, #0b1020 65%);
-    }
-
-    .tag {
-      color: #60a5fa;
-      font-size: 13px;
-      font-weight: bold;
-      letter-spacing: 2px;
-    }
-
-    h1 {
-      font-size: clamp(38px, 6vw, 65px);
-      line-height: 1.15;
-      margin: 20px 0;
-      max-width: 800px;
-    }
-
-    .hero p {
-      color: #cbd5e1;
-      max-width: 650px;
-      margin-bottom: 25px;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 12px 23px;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      border-radius: 7px;
-      margin: 5px 8px 5px 0;
-      font-weight: bold;
-    }
-
-    .btn:hover {
-      background: #1d4ed8;
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1px solid #64748b;
-    }
-
-    section {
-      padding: 70px 0;
-    }
-
-    .section-title {
-      font-size: 32px;
-      margin-bottom: 10px;
-    }
-
-    .section-intro {
-      color: #94a3b8;
-      margin-bottom: 30px;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      background: #131c30;
-      border: 1px solid #28354d;
-      border-radius: 12px;
-      padding: 25px;
-      transition: transform 0.2s;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-    }
-
-    .card h3 {
-      color: #93c5fd;
-      margin-bottom: 10px;
-    }
-
-    .card p, .about p {
-      color: #cbd5e1;
-    }
-
-    .about {
-      background: #10182a;
-    }
-
-    .contact {
-      text-align: center;
-    }
-
-    .contact p {
-      color: #cbd5e1;
-      margin: 15px 0;
-    }
-
-    footer {
-      border-top: 1px solid #28354d;
-      text-align: center;
-      padding: 25px 0;
-      color: #94a3b8;
-      font-size: 14px;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        width: 90%;
-      }
-
-      nav {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-
-      nav a {
-        margin: 0 12px 0 0;
-      }
-
-      .hero {
-        padding: 70px 0;
-      }
-
-      section {
-        padding: 50px 0;
-      }
-    }
-  </style>
+section { padding: 85px 0; }
+.section-head { margin-bottom: 32px; }
+.eyebrow {
+  color: var(--orange);
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+h2 { font-size: clamp(29px, 4vw, 40px); margin: 8px 0; }
+.section-head p { max-width: 620px; }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px;
+  align-items: start;
+}
+.panel, .card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  padding: 25px;
+}
+.skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.skills span {
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 12px;
+  color: #cbd5e1;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.card { transition: transform .2s, border-color .2s; }
+.card:hover { transform: translateY(-4px); border-color: #ff7417a0; }
+.card .number { color: var(--orange); font-size: 13px; }
+.card h3 { margin: 9px 0; font-size: 19px; }
+.card p { font-size: 14px; margin-bottom: 15px; }
+.card .btn { margin-top: 5px; }
+.alt { background: #0c111d; }
+.project-label {
+  display: inline-block;
+  border: 1px solid #303b50;
+  padding: 4px 9px;
+  border-radius: 6px;
+  color: #93c5fd;
+  font-size: 11px;
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+.contact-link {
+  display: block;
+  padding: 20px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+.contact-link strong { display: block; margin-bottom: 5px; }
+.contact-link span { font-size: 13px; color: var(--muted); }
+.review-note { font-size: 13px; margin-top: 20px; }
+footer {
+  border-top: 1px solid var(--border);
+  padding: 25px 0;
+  color: var(--muted);
+  font-size: 13px;
+  text-align: center;
+}
+@media (max-width: 760px) {
+  .hero-grid, .about-grid { grid-template-columns: 1fr; }
+  .hero-grid { gap: 35px; }
+  .photo { max-width: 230px; }
+  .grid, .contact-grid { grid-template-columns: 1fr; }
+  nav { padding: 15px 0; align-items: flex-start; flex-direction: column; }
+  .navlinks { gap: 14px; }
+  .hero { min-height: auto; }
+  section { padding: 60px 0; }
+}
+</style>
 </head>
 
 <body>
-
-  <header>
-    <div class="container">
-      <nav>
-        <div class="logo">MY PORTFOLIO</div>
-        <div>
-          <a href="#home">Home</a>
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </div>
-      </nav>
+<header>
+  <nav class="container">
+    <a class="logo" href="#home">MY<span>PORTFOLIO</span></a>
+    <div class="navlinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
     </div>
-  </header>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container">
-        <div class="tag">DIGITAL MARKETING PORTFOLIO</div>
-        <h1>Grow Your Business With Smart Digital Marketing</h1>
-        <p>
-          Helping businesses build their online presence through
-          digital advertising, audience targeting and search optimization.
-        </p>
-        <a class="btn" href="#services">Explore My Services</a>
-        <a class="btn btn-outline" href="#contact">Let's Connect</a>
-      </div>
-    </section>
-
-    <section id="services">
-      <div class="container">
-        <h2 class="section-title">My Services</h2>
-        <p class="section-intro">
-          Digital marketing solutions for your business.
-        </p>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Meta Ads</h3>
-            <p>Facebook and Instagram campaign setup, audience research and optimization.</p>
-          </div>
-
-          <div class="card">
-            <h3>Google Ads</h3>
-            <p>Search advertising setup and campaign planning to reach relevant customers.</p>
-          </div>
-
-          <div class="card">
-            <h3>TikTok Ads</h3>
-            <p>Campaign planning and audience-focused advertising setup.</p>
-          </div>
-
-          <div class="card">
-            <h3>YouTube SEO</h3>
-            <p>Video keyword research, title optimization and description improvement.</p>
-          </div>
-
-          <div class="card">
-            <h3>Facebook Page Setup</h3>
-            <p>Business page creation, profile setup and basic page optimization.</p>
-          </div>
-
-          <div class="card">
-            <h3>Ads Strategy</h3>
-            <p>Campaign structure, budget planning and performance measurement.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <p>
-          Welcome to my portfolio! I am building my skills in digital
-          marketing and helping businesses improve their online presence.
-          My focus areas include paid advertising, campaign planning
-          and YouTube search optimization.
-        </p>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container">
-        <h2 class="section-title">Portfolio Projects</h2>
-        <p class="section-intro">
-          Add your practice projects and real work samples here.
-        </p>
-
-        <div class="grid">
-          <div class="card">
-            <h3>Meta Ads Practice</h3>
-            <p>A sample campaign plan with objectives, audience and budget structure.</p>
-          </div>
-
-          <div class="card">
-            <h3>Google Ads Practice</h3>
-            <p>A sample keyword research and search campaign structure.</p>
-          </div>
-
-          <div class="card">
-            <h3>YouTube SEO Practice</h3>
-            <p>A sample video optimization project with keywords and improved metadata.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container">
-        <h2 class="section-title">Let's Work Together</h2>
-        <p>
-          Have a project in mind? Contact me to discuss your digital
-          marketing requirements.
-        </p>
-        <a class="btn" href="mailto:your-email@example.com">Email Me</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      © 2026 My Portfolio | Digital Marketing
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="tag">● DIGITAL MARKETING FREELANCER</span>
+      <h1>Growing Businesses<br><span class="gradient">With Digital Marketing</span></h1>
+      <p>
+        Hello! I help businesses build their online presence through
+        digital advertising, audience targeting and SEO.
+      </p>
+      <a class="btn" href="#services">View Services →</a>
+      <a class="btn btn-outline" href="#contact">Contact Me</a>
     </div>
-  </footer>
+    <div class="photo">
+      <!-- Add your photo as profile.jpg in this repository -->
+      <div class="photo-placeholder">
+        <strong>YOUR PHOTO</strong>
+        Add profile.jpg<br>to show your picture here
+      </div>
+    </div>
+  </div>
+</section>
 
+<section id="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">GET TO KNOW ME</span>
+      <h2>About <span class="gradient">Me</span></h2>
+      <p>A little introduction about who I am and what I do.</p>
+    </div>
+    <div class="about-grid">
+      <div>
+        <h3>Digital Marketing & Business Growth</h3>
+        <p>
+          I am developing my skills in digital marketing with a focus on
+          advertising campaigns, audience research and online growth.
+          I aim to help businesses reach the right people with a clear strategy.
+        </p>
+      </div>
+      <div class="panel">
+        <h3>My Skills</h3>
+        <div class="skills">
+          <span>Meta Ads</span>
+          <span>Google Ads</span>
+          <span>TikTok Ads</span>
+          <span>YouTube SEO</span>
+          <span>Facebook Page Setup</span>
+          <span>Campaign Planning</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="services">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">WHAT I OFFER</span>
+      <h2>My <span class="gradient">Services</span></h2>
+      <p>Choose a service and contact me to discuss your project.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="number">01 / ADVERTISING</span>
+        <h3>Meta Ads</h3>
+        <p>Facebook and Instagram campaign setup, audience research and optimization.</p>
+        <a class="btn order" data-service="Meta Ads" href="#contact">Order Now →</a>
+      </article>
+      <article class="card">
+        <span class="number">02 / ADVERTISING</span>
+        <h3>Google Ads</h3>
+        <p>Search campaign planning, keyword research and advertising setup.</p>
+        <a class="btn order" data-service="Google Ads" href="#contact">Order Now →</a>
+      </article>
+      <article class="card">
+        <span class="number">03 / ADVERTISING</span>
+        <h3>TikTok Ads</h3>
+        <p>Campaign planning and targeted advertising setup.</p>
+        <a class="btn order" data-service="TikTok Ads" href="#contact">Order Now →</a>
+      </article>
+      <article class="card">
+        <span class="number">04 / SEO</span>
+        <h3>YouTube SEO</h3>
+        <p>Keyword research, video titles and description optimization.</p>
+        <a class="btn order" data-service="YouTube SEO" href="#contact">Order Now →</a>
+      </article>
+      <article class="card">
+        <span class="number">05 / SETUP</span>
+        <h3>Facebook Page Setup</h3>
+        <p>Business page creation and professional page setup.</p>
+        <a class="btn order" data-service="Facebook Page Setup" href="#contact">Order Now →</a>
+      </article>
+      <article class="card">
+        <span class="number">06 / STRATEGY</span>
+        <h3>Ads Campaign Plan</h3>
+        <p>Campaign structure, audience planning and measurement strategy.</p>
+        <a class="btn order" data-service="Ads Campaign Plan" href="#contact">Order Now →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">MY WORK</span>
+      <h2>Portfolio <span class="gradient">Projects</span></h2>
+      <p>Add your own practice projects or real client work here.</p>
+    </div>
+    <div class="grid">
+      <article class="card">
+        <span class="project-label">PRACTICE PROJECT</span>
+        <h3>Restaurant Meta Ads Plan</h3>
+        <p>A sample plan covering campaign objective, local audience and ad creative ideas.</p>
+      </article>
+      <article class="card">
+        <span class="project-label">PRACTICE PROJECT</span>
+        <h3>Google Search Campaign</h3>
+        <p>A sample keyword research and search advertising structure.</p>
+      </article>
+      <article class="card">
+        <span class="project-label">PRACTICE PROJECT</span>
+        <h3>YouTube SEO</h3>
+        <p>A sample video optimization project covering keywords and metadata.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="reviews">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">CLIENT FEEDBACK</span>
+      <h2>Client <span class="gradient">Reviews</span></h2>
+      <p>Real feedback from clients I have worked with.</p>
+    </div>
+    <div class="panel">
+      <h3>★★★★★</h3>
+      <p>Client reviews will appear here after I receive genuine feedback.</p>
+      <p class="review-note">Only genuine client reviews should be published here.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">GET IN TOUCH</span>
+      <h2>Let's Work <span class="gradient">Together</span></h2>
+      <p>Contact me to discuss your project and service requirements.</p>
+    </div>
+    <div class="contact-grid">
+      <a class="contact-link" href="https://wa.me/" target="_blank" rel="noopener">
+        <strong>WhatsApp</strong><span>Chat about your project ↗</span>
+      </a>
+      <a class="contact-link" href="https://facebook.com/" target="_blank" rel="noopener">
+        <strong>Facebook</strong><span>Visit my profile ↗</span>
+      </a>
+      <a class="contact-link" href="mailto:your-email@example.com">
+        <strong>Email</strong><span>Send me an email ↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">© 2026 My Portfolio. All rights reserved.</div>
+</footer>
+
+<script>
+document.querySelectorAll(".order").forEach(function(button) {
+  button.addEventListener("click", function() {
+    const service = button.dataset.service;
+    const heading = document.querySelector("#contact .section-head p");
+    heading.textContent =
+      "You selected " + service + ". Please contact me using one of the options below.";
+  });
+});
+</script>
 </body>
 </html>
